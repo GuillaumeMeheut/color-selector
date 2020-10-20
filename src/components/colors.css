@@ -1,0 +1,11 @@
+.appContainer {
+  position: relative;
+  height: 100vh;
+}
+
+.colorsContainer {
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 25vw);
+  grid-template-rows: repeat(2, 50vh);
+}

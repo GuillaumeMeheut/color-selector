@@ -1,0 +1,23 @@
+.colorContainer {
+  position: relative;
+  width: fit-content;
+}
+
+.text {
+  cursor: pointer;
+}
+
+.myColor {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 25vw;
+  height: 50vh;
+  transform: scale(1);
+  transition: 0.3s ease-in-out;
+}
+
+.myColorTriggered {
+  transform: scale(0);
+}
