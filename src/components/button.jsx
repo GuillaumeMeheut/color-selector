@@ -26,6 +26,7 @@ class Button extends Component {
       <button
         className={`${buttonClicked ? "buttonRefresh" : " buttonRefresh buttonRefreshClicked"}`}
         onClick={() => {
+          this.props.triggerColorClass();
           this.props.randomize();
           this.buttonTransition();
         }}

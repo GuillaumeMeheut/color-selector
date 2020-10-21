@@ -6,12 +6,16 @@ class Color extends Component {
 
   copyText = (text) => {
     navigator.clipboard.writeText(text);
+    this.props.triggerCopied(this.props.hexa);
   };
 
   render() {
     return (
       <div className="colorContainer">
-        <div className="myColor" style={{ backgroundColor: this.props.hexa }}>
+        <div
+          className={this.props.class}
+          style={{ backgroundColor: this.props.hexa, transitionDelay: this.props.transitionDelay }}
+        >
           <p className="text" onClick={() => this.copyText(this.props.hexa)}>
             {this.props.hexa}
           </p>
