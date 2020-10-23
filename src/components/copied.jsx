@@ -6,7 +6,9 @@ class Copied extends Component {
   render() {
     return (
       <div className={this.props.class} style={{ backgroundColor: this.props.color }}>
-        <p className="textCopied">COPIED !</p>
+        <div className="textContainer" style={{ backgroundColor: this.props.color }}>
+          <p className="textCopied">COPIED !</p>
+        </div>
       </div>
     );
   }

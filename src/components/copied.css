@@ -9,13 +9,27 @@
 }
 .backgroundDesactivated {
   opacity: 0;
-  transform: scaleY(0);
+  visibility: hidden;
   transition: 0.3s ease-in-out;
 }
 
 .backgroundActivated {
   opacity: 1;
-  transform: scaleY(1);
+  transition: 0.3s ease-in-out;
+}
+
+.backgroundDesactivated .textContainer {
+  width: 100%;
+  text-align: center;
+  transform: scale(1.7);
+  transition: 0.3s ease-in-out;
+}
+
+.backgroundActivated .textContainer {
+  width: 100%;
+  text-align: center;
+  filter: brightness(0.9);
+  transform: scale(1);
   transition: 0.3s ease-in-out;
 }
 

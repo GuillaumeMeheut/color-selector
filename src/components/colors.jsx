@@ -11,10 +11,10 @@ class Colors extends Component {
       { id: 2, hexa: "#000000", rgb: "rgb(0,0,0)", transitionDelay: "0.1s", textColor: "#ffffff" },
       { id: 3, hexa: "#000000", rgb: "rgb(0,0,0)", transitionDelay: "0.2s", textColor: "#ffffff" },
       { id: 4, hexa: "#000000", rgb: "rgb(0,0,0)", transitionDelay: "0.3s", textColor: "#ffffff" },
-      { id: 5, hexa: "#000000", rgb: "rgb(0,0,0)", transitionDelay: "0.4s", textColor: "#ffffff" },
-      { id: 6, hexa: "#000000", rgb: "rgb(0,0,0)", transitionDelay: "0.5s", textColor: "#ffffff" },
-      { id: 7, hexa: "#000000", rgb: "rgb(0,0,0)", transitionDelay: "0.6s", textColor: "#ffffff" },
-      { id: 8, hexa: "#000000", rgb: "rgb(0,0,0)", transitionDelay: "0.7s", textColor: "#ffffff" },
+      { id: 5, hexa: "#000000", rgb: "rgb(0,0,0)", transitionDelay: "0.3s", textColor: "#ffffff" },
+      { id: 6, hexa: "#000000", rgb: "rgb(0,0,0)", transitionDelay: "0.2s", textColor: "#ffffff" },
+      { id: 7, hexa: "#000000", rgb: "rgb(0,0,0)", transitionDelay: "0.1s", textColor: "#ffffff" },
+      { id: 8, hexa: "#000000", rgb: "rgb(0,0,0)", transitionDelay: "0s", textColor: "#ffffff" },
     ],
     colorClass: "myColor",
     copiedClass: "background backgroundDesactivated",
@@ -37,7 +37,7 @@ class Colors extends Component {
     setTimeout(() => {
       c = "myColor myColorActivated";
       this.setState({ colorClass: c });
-    }, 300);
+    }, 800);
   };
 
   triggerCopied = (color) => {
