@@ -5,6 +5,7 @@
 
 .text {
   cursor: pointer;
+  position: relative;
 }
 
 .myColor {
@@ -21,4 +22,9 @@
 
 .myColorActivated {
   transform: scale(1);
+}
+
+.cadenas {
+  cursor: pointer;
+  transition: 1.5s ease-in-out;
 }

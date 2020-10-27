@@ -1,0 +1,7 @@
+<svg width="24" height="31" viewBox="0 0 24 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect y="12.2448" width="24" height="18" rx="4" fill={textFillColor}
+            className="cadenas"/>
+<path d="M6 6.69565C5.99999 2.26087 9.07107 2 12 2C14.9289 2 18 2 18 6.69565C18 11.3913 18 14 18 14" stroke={textFillColor}
+            stroke-width="3"
+            className="cadenas"/>
+</svg>

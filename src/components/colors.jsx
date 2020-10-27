@@ -7,14 +7,70 @@ import "./colors.css";
 class Colors extends Component {
   state = {
     colors: [
-      { id: 1, hexa: "#000000", rgb: "rgb(0,0,0)", transitionDelay: "0s", textColor: "#FFFFFF" },
-      { id: 2, hexa: "#000000", rgb: "rgb(0,0,0)", transitionDelay: "0.1s", textColor: "#ffffff" },
-      { id: 3, hexa: "#000000", rgb: "rgb(0,0,0)", transitionDelay: "0.2s", textColor: "#ffffff" },
-      { id: 4, hexa: "#000000", rgb: "rgb(0,0,0)", transitionDelay: "0.3s", textColor: "#ffffff" },
-      { id: 5, hexa: "#000000", rgb: "rgb(0,0,0)", transitionDelay: "0.3s", textColor: "#ffffff" },
-      { id: 6, hexa: "#000000", rgb: "rgb(0,0,0)", transitionDelay: "0.2s", textColor: "#ffffff" },
-      { id: 7, hexa: "#000000", rgb: "rgb(0,0,0)", transitionDelay: "0.1s", textColor: "#ffffff" },
-      { id: 8, hexa: "#000000", rgb: "rgb(0,0,0)", transitionDelay: "0s", textColor: "#ffffff" },
+      {
+        id: 1,
+        hexa: "#000000",
+        rgb: "rgb(0,0,0)",
+        transitionDelay: "0s",
+
+        locked: false,
+      },
+      {
+        id: 2,
+        hexa: "#000000",
+        rgb: "rgb(0,0,0)",
+        transitionDelay: "0.1s",
+
+        locked: false,
+      },
+      {
+        id: 3,
+        hexa: "#000000",
+        rgb: "rgb(0,0,0)",
+        transitionDelay: "0.2s",
+
+        locked: false,
+      },
+      {
+        id: 4,
+        hexa: "#000000",
+        rgb: "rgb(0,0,0)",
+        transitionDelay: "0.3s",
+
+        locked: false,
+      },
+      {
+        id: 5,
+        hexa: "#000000",
+        rgb: "rgb(0,0,0)",
+        transitionDelay: "0.3s",
+
+        locked: false,
+      },
+      {
+        id: 6,
+        hexa: "#000000",
+        rgb: "rgb(0,0,0)",
+        transitionDelay: "0.2s",
+
+        locked: false,
+      },
+      {
+        id: 7,
+        hexa: "#000000",
+        rgb: "rgb(0,0,0)",
+        transitionDelay: "0.1s",
+
+        locked: false,
+      },
+      {
+        id: 8,
+        hexa: "#000000",
+        rgb: "rgb(0,0,0)",
+        transitionDelay: "0s",
+
+        locked: false,
+      },
     ],
     colorClass: "myColor",
     copiedClass: "background backgroundDesactivated",
@@ -23,10 +79,12 @@ class Colors extends Component {
 
   randomizeColor = () => {
     const colors = this.state.colors.map((c) => {
-      const color = ~~(Math.random() * 0xffffff);
-      c.hexa = "#" + color.toString(16).padStart(6, "0").toUpperCase();
-      c.rgb = "RGB(" + (color >> 16) + "," + ((color >> 8) & 0xff) + "," + (color & 0xff) + ")";
-      return c;
+      if (!c.locked) {
+        const color = ~~(Math.random() * 0xffffff);
+        c.hexa = "#" + color.toString(16).padStart(6, "0").toUpperCase();
+        c.rgb = "RGB(" + (color >> 16) + "," + ((color >> 8) & 0xff) + "," + (color & 0xff) + ")";
+        return c;
+      } else return c;
     });
     this.setState({ colors });
   };
@@ -50,6 +108,12 @@ class Colors extends Component {
     }, 500);
   };
 
+  triggerLocked = (e) => {
+    let colors = [...this.state.colors];
+    colors[e - 1].locked = !this.state.colors[e - 1].locked;
+    this.setState({ colors });
+  };
+
   render() {
     return (
       <div className="appContainer">
@@ -59,11 +123,13 @@ class Colors extends Component {
           {this.state.colors.map((color) => (
             <Color
               key={color.id}
+              id={color.id}
               hexa={color.hexa}
               rgb={color.rgb}
               class={this.state.colorClass}
               transitionDelay={color.transitionDelay}
-              textColor={color.textColor}
+              locked={color.locked}
+              triggerLocked={this.triggerLocked}
               triggerCopied={this.triggerCopied}
             />
           ))}
